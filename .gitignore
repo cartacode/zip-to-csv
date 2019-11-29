@@ -1,0 +1,8 @@
+*.pyc
+venv/
+storage.json
+credentials.json
+combined-folders/
+temp-folders/
+zip-folders/
+input-files/
