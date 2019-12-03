@@ -61,9 +61,18 @@ if __name__ == "__main__":
     combined_path = "{}/combined-folders".format(BASE_DIR)
     input_files_path = "{}/input-files".format(BASE_DIR)
 
+    # Create folders if they don't exist
+    folder_path_list = [zipfile_path, output_path, combined_path, input_files_path]
+    for folder_path in folder_path_list:
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+
+    method = input("Type method: 1: unzip the zipfiles, 2: get output.csv file from input.txt file, 3: search specific data:\n")
+
     # 1: unzip the zipfiles, 2: get output.csv file from input.txt file
     # 3: search specific data
-    run_type = 3
+    run_type = int(method)
     if run_type == 1:
         # Get zipfiles
         extract_all_zipfiles(zipfile_path, output_path)
